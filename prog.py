@@ -51,6 +51,10 @@ class MyFirstGuiProgram(Ui_Form):
     
         self.Green.clicked.connect(self.LedGreen)
         self.Red.clicked.connect(self.LedRed)
+
+        adress,port,pin = IO.read_write_pin(1)
+        bus.write_byte_data(adress,port,0)
+        bus.write_byte_data(adress,port,pin)
         
     def LedGreen(self):
         image = QtGui.QImage(QtGui.QImageReader("green.png").read())
@@ -58,6 +62,9 @@ class MyFirstGuiProgram(Ui_Form):
     def LedRed(self):
         image = QtGui.QImage(QtGui.QImageReader("red.png").read())
         self.label_1.setPixmap(QtGui.QPixmap(image))
+            
+        adress,port,pin = IO.read_write_pin(1)
+        bus.write_byte_data(adress,port,0)
 
         
 if __name__ == '__main__':
