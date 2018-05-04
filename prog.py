@@ -54,7 +54,7 @@ class MyFirstGuiProgram(Ui_Form):
 
         adress,port,pin = IO.write_pin(1)
         bus.write_byte_data(adress,port,0)
-        //bus.write_byte_data(adress,port,pin)
+        #bus.write_byte_data(adress,port,pin)
         
     def LedGreen(self):
         image = QtGui.QImage(QtGui.QImageReader("green.png").read())
