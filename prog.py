@@ -54,14 +54,18 @@ class MyFirstGuiProgram(Ui_Form):
 
         adress,port,pin = IO.write_pin(1)
         bus.write_byte_data(adress,port,0)
-        #bus.write_byte_data(adress,port,pin)
+        
+        If Trigg:
+            adress,port,pin = IO.write_pin(1)
+            bus.write_byte_data(adress,port,pin)
         
     def LedGreen(self):
         image = QtGui.QImage(QtGui.QImageReader("green.png").read())
         self.label_1.setPixmap(QtGui.QPixmap(image))
            
-        adress,port,pin = IO.write_pin(1)
-        bus.write_byte_data(adress,port,pin)
+        Trigg = True
+        #adress,port,pin = IO.write_pin(1)
+        #bus.write_byte_data(adress,port,pin)
 
     def LedRed(self):
         image = QtGui.QImage(QtGui.QImageReader("red.png").read())
@@ -70,6 +74,7 @@ class MyFirstGuiProgram(Ui_Form):
         adress,port,pin = IO.write_pin(1)
         bus.write_byte_data(adress,port,0)
 
+        Trigg = False
         
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
