@@ -57,7 +57,7 @@ class MyFirstGuiProgram(Ui_Form):
         
         Trigg = False    
             
-        If Trigg:
+        If Trigg == True:
             adress,port,pin = IO.write_pin(1)
             bus.write_byte_data(adress,port,pin)
         
