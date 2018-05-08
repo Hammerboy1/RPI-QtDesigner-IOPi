@@ -57,7 +57,7 @@ class MyFirstGuiProgram(Ui_Form):
         
         trigger = False    
             
-        If trigger == True:
+        if trigger == True:
             adress,port,pin = IO.write_pin(1)
             bus.write_byte_data(adress,port,pin)
         
@@ -66,8 +66,8 @@ class MyFirstGuiProgram(Ui_Form):
         self.label_1.setPixmap(QtGui.QPixmap(image))
            
         trigger = True
-        adress,port,pin = IO.write_pin(1)
-        bus.write_byte_data(adress,port,pin)
+        #adress,port,pin = IO.write_pin(1)
+        #bus.write_byte_data(adress,port,pin)
 
     def LedRed(self):
         image = QtGui.QImage(QtGui.QImageReader("red.png").read())
