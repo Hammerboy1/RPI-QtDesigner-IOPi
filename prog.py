@@ -64,7 +64,7 @@ class MyFirstGuiProgram(Ui_Form):
         read = bus.read_byte_data(adress_in,port_in)
         bus.write_byte_data(adress_out,port_out,0)
         
-        if Read == 0:
+        if read == 0:
             image = QtGui.QImage(QtGui.QImageReader("red.png").read())
             self.label_1.setPixmap(QtGui.QPixmap(image))
         else:
