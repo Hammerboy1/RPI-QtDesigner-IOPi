@@ -8,8 +8,6 @@ import IO
 
 #Variables
 
-trigger = True
-
 #bus = smbus.SMBus(0)
 bus = smbus.SMBus(1)
 # Device address
@@ -55,18 +53,13 @@ class MyFirstGuiProgram(Ui_Form):
     
         self.Green.clicked.connect(self.LedGreen)
         self.Red.clicked.connect(self.LedRed)
-            
-    if trigger == True:
-        adress,port,pin = IO.write_pin(1)
-        bus.write_byte_data(adress,port,pin)
         
     def LedGreen(self):
         image = QtGui.QImage(QtGui.QImageReader("green.png").read())
         self.label_1.setPixmap(QtGui.QPixmap(image))
            
-        trigger = True
-        #adress,port,pin = IO.write_pin(1)
-        #bus.write_byte_data(adress,port,pin)
+        adress,port,pin = IO.write_pin(1)
+        bus.write_byte_data(adress,port,pin)
 
     def LedRed(self):
         image = QtGui.QImage(QtGui.QImageReader("red.png").read())
@@ -74,8 +67,6 @@ class MyFirstGuiProgram(Ui_Form):
             
         adress,port,pin = IO.write_pin(1)
         bus.write_byte_data(adress,port,0)
-
-        trigger = False
         
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
