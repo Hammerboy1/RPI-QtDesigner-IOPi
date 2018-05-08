@@ -6,6 +6,10 @@ import smbus
 import time
 import IO
 
+#Variables
+
+trigger = False
+
 #bus = smbus.SMBus(0)
 bus = smbus.SMBus(1)
 # Device address
