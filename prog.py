@@ -53,9 +53,8 @@ class MyFirstGuiProgram(Ui_Form):
         self.Test2.clicked.connect(self.test_2)
         
     def test_1(self):
-        image = QtGui.QImage(QtGui.QImageReader("green.png").read())
-        self.label_1.setPixmap(QtGui.QPixmap(image))
-           
+        self.label_1.setPixmap(QtGui.QPixmap(None))
+
         adress,port,pin = IO.write_pin(1)
         bus.write_byte_data(adress,port,pin)
 
@@ -63,7 +62,14 @@ class MyFirstGuiProgram(Ui_Form):
         adress_out,port_out,pin_out = IO.write_pin(2)
         bus.write_byte_data(adress_out,port_out,pin_out)
         read = bus.read_byte_data(adress_in,port_in)
-        bus.write_byte_data(adress_out,port_out,0)            
+        bus.write_byte_data(adress_out,port_out,0)
+        
+        if Read == 0:
+            image = QtGui.QImage(QtGui.QImageReader("red.png").read())
+            self.label_1.setPixmap(QtGui.QPixmap(image))
+        else:
+            image = QtGui.QImage(QtGui.QImageReader("green.png").read())
+            self.label_1.setPixmap(QtGui.QPixmap(image))
 
     def test_2(self):
         image = QtGui.QImage(QtGui.QImageReader("red.png").read())
