@@ -8,7 +8,7 @@ import IO
 
 #Variables
 
-trigger =
+trigger = True
 
 #bus = smbus.SMBus(0)
 bus = smbus.SMBus(1)
