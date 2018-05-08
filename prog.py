@@ -59,6 +59,12 @@ class MyFirstGuiProgram(Ui_Form):
         adress,port,pin = IO.write_pin(1)
         bus.write_byte_data(adress,port,pin)
 
+        adress_in,port_in,pin_in = IO.read_pin(81)
+        adress_out,port_out,pin_out = IO.write_pin(2)
+        bus.write_byte_data(adress_out,port_out,pin_out)
+        read = bus.read_byte_data(adress_in,port_in)
+        bus.write_byte_data(adress_out,port_out,0)            
+
     def test_2(self):
         image = QtGui.QImage(QtGui.QImageReader("red.png").read())
         self.label_1.setPixmap(QtGui.QPixmap(image))
