@@ -55,9 +55,6 @@ class MyFirstGuiProgram(Ui_Form):
     
         self.Green.clicked.connect(self.LedGreen)
         self.Red.clicked.connect(self.LedRed)
-
-        adress,port,pin = IO.write_pin(1)
-        bus.write_byte_data(adress,port,0)
             
     if trigger == True:
         adress,port,pin = IO.write_pin(1)
