@@ -40,7 +40,7 @@ bus.write_byte_data(adress_24,0x0c,0x00)
 bus.write_byte_data(adress_25,0x0d,0x00)
 bus.write_byte_data(adress_25,0x0c,0x00)
 
-adress_in,port_in,pin_in = IO.read_pin(81)
+adress_in,port_in,pin_in = IO.read_pin(65)
 adress_out,port_out,pin_out = IO.write_pin(2)
 bus.write_byte_data(adress_out,port_out,pin_out)
 time.sleep(0.1)
