@@ -84,10 +84,10 @@ class MyFirstGuiProgram(Ui_Form):
             self.label_1.setPixmap(QtGui.QPixmap(image))
         if read1 == 2:
             image = QtGui.QImage(QtGui.QImageReader("green.png").read())
-            self.label_1.setPixmap(QtGui.QPixmap(image))
+            self.label_2.setPixmap(QtGui.QPixmap(image))
         else:
             image = QtGui.QImage(QtGui.QImageReader("red.png").read())
-            self.label_1.setPixmap(QtGui.QPixmap(image))
+            self.label_2.setPixmap(QtGui.QPixmap(image))
 
     def test_2(self):
         #image = QtGui.QImage(QtGui.QImageReader("red.png").read())
