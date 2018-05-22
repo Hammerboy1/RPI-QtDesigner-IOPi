@@ -76,6 +76,7 @@ class MyFirstGuiProgram(Ui_Form):
         self.label_1.setPixmap(QtGui.QPixmap(None))
             
         adress,port,pin = IO.write_pin(1)
+        time.sleep(1)
         bus.write_byte_data(adress,port,pin)
 
         
