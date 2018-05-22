@@ -59,11 +59,11 @@ class MyFirstGuiProgram(Ui_Form):
         adress_in,port_in,pin_in = IO.read_pin(65)
         adress_out,port_out,pin_out = IO.write_pin(2)
         bus.write_byte_data(adress_out,port_out,0)
-        time.sleep(0.1)
+        time.sleep(0.2)
         bus.write_byte_data(adress_out,port_out,pin_out)
-        time.sleep(0.1)
+        time.sleep(0.2)
         read = bus.read_byte_data(adress_in,port_in)
-        time.sleep(0.1)
+        time.sleep(0.2)
         bus.write_byte_data(adress_out,port_out,0)
         
         if read == 1:
