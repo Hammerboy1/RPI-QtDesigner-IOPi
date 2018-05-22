@@ -55,9 +55,6 @@ class MyFirstGuiProgram(Ui_Form):
     def test_1(self):
         self.label_1.setPixmap(QtGui.QPixmap(None))
 
-        #adress,port,pin = IO.write_pin(1)
-        #bus.write_byte_data(adress,port,0)
-
         adress_in,port_in,pin_in = IO.read_pin(65)
         adress_out,port_out,pin_out = IO.write_pin(2)
         bus.write_byte_data(adress_out,port_out,0)
