@@ -1,7 +1,7 @@
 import test
 import sys
 from PyQt5 import QtCore, QtGui, QtWidgets
-from Skjerm import Ui_Form
+from RoofSkjerm import Ui_Form
 import smbus
 import time
 import IO
