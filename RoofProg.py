@@ -65,8 +65,24 @@ class MyFirstGuiProgram(Ui_Form):
         read = bus.read_byte_data(adress_in,port_in)
         time.sleep(0.2)
         bus.write_byte_data(adress_out,port_out,0)
+            
+        adress_in,port_in,pin_in = IO.read_pin(66)
+        adress_out,port_out,pin_out = IO.write_pin(3)
+        bus.write_byte_data(adress_out,port_out,0)
+        time.sleep(0.2)
+        bus.write_byte_data(adress_out,port_out,pin_out)
+        time.sleep(0.2)
+        read1 = bus.read_byte_data(adress_in,port_in)
+        time.sleep(0.2)
+        bus.write_byte_data(adress_out,port_out,0)
         
         if read == 1:
+            image = QtGui.QImage(QtGui.QImageReader("green.png").read())
+            self.label_1.setPixmap(QtGui.QPixmap(image))
+        else:
+            image = QtGui.QImage(QtGui.QImageReader("red.png").read())
+            self.label_1.setPixmap(QtGui.QPixmap(image))
+        if read1 == 2:
             image = QtGui.QImage(QtGui.QImageReader("green.png").read())
             self.label_1.setPixmap(QtGui.QPixmap(image))
         else:
