@@ -57,7 +57,7 @@ class MyFirstGuiProgram(Ui_Form):
         self.label_1.setPixmap(QtGui.QPixmap(None))
 
         adress_in,port_in,pin_in = IO.read_pin(65)
-        adress_out,port_out,pin_out = IO.write_pin(2)
+        adress_out,port_out,pin_out = IO.write_pin(1)
         bus.write_byte_data(adress_out,port_out,0)
         time.sleep(0.2)
         bus.write_byte_data(adress_out,port_out,pin_out)
@@ -67,7 +67,7 @@ class MyFirstGuiProgram(Ui_Form):
         bus.write_byte_data(adress_out,port_out,0)
             
         adress_in,port_in,pin_in = IO.read_pin(66)
-        adress_out,port_out,pin_out = IO.write_pin(3)
+        adress_out,port_out,pin_out = IO.write_pin(2)
         bus.write_byte_data(adress_out,port_out,0)
         time.sleep(0.2)
         bus.write_byte_data(adress_out,port_out,pin_out)
