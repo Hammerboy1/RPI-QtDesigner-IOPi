@@ -74,14 +74,21 @@ class MyFirstGuiProgram(Ui_Form):
             self.label_1.setPixmap(QtGui.QPixmap(image))
 
     def test_2(self):
-        image = QtGui.QImage(QtGui.QImageReader("red.png").read())
-        self.label_1.setPixmap(QtGui.QPixmap(None))
+        #image = QtGui.QImage(QtGui.QImageReader("red.png").read())
+        #self.label_1.setPixmap(QtGui.QPixmap(None))
             
-        adress,port,pin = IO.write_pin(1)
-        bus.write_byte_data(adress,port,pin)
+        #adress,port,pin = IO.write_pin(1)
+        #bus.write_byte_data(adress,port,pin)
+        
+        for i in range(1,10):
+            
+           xlabel = getattr(self, "label_"+str(i))
+            
+           image = QtGui.QImage(QtGui.QImageReader("red.png").read())
+           xlabel.setPixmap(QtGui.QPixmap(image))
 
     def test_3(self):
-        for i in range(1,5):
+        for i in range(1,10):
             
            xlabel = getattr(self, "label_"+str(i))
             
