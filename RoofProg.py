@@ -80,13 +80,13 @@ class MyFirstGuiProgram(Ui_Form):
         adress,port,pin = IO.write_pin(1)
         bus.write_byte_data(adress,port,pin)
 
-     def test_3(self):
-         for i in range(1,5):
+    def test_3(self):
+        for i in range(1,5):
             
-            xlabel = getattr(self, "label_"+str(i))
+           xlabel = getattr(self, "label_"+str(i))
             
-            image = QtGui.QImage(QtGui.QImageReader("green.png").read())
-            xlabel.setPixmap(QtGui.QPixmap(image))
+           image = QtGui.QImage(QtGui.QImageReader("green.png").read())
+           xlabel.setPixmap(QtGui.QPixmap(image))
 
         
 if __name__ == '__main__':
