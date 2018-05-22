@@ -61,7 +61,9 @@ class MyFirstGuiProgram(Ui_Form):
         adress_in,port_in,pin_in = IO.read_pin(65)
         adress_out,port_out,pin_out = IO.write_pin(2)
         bus.write_byte_data(adress_out,port_out,pin_out)
+        time.sleep(0.1)
         read = bus.read_byte_data(adress_in,port_in)
+        time.sleep(0.1)
         bus.write_byte_data(adress_out,port_out,0)
         
         if read == 1:
@@ -76,7 +78,6 @@ class MyFirstGuiProgram(Ui_Form):
         self.label_1.setPixmap(QtGui.QPixmap(None))
             
         adress,port,pin = IO.write_pin(1)
-        time.sleep(1)
         bus.write_byte_data(adress,port,pin)
 
         
