@@ -78,7 +78,7 @@ LR_result = [L1_result,L2_result,L3_result,R1_result,R2_result,R3_result]
 
 #check if cable is OK
 def check():
-        for LR in range(0,6):
+        for LR in range(0,1):
                 for out in range(1,8):
 
                         adress_in,port_in,pin_in = IO.read_pin(LR_read[LR][out])
