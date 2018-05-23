@@ -3,7 +3,7 @@ import smbus
 import time
 import IO
 
-Roof_Write = [83,81,86,84,82]
+Roof_write = [83,81,86,84,82]
 Roof_read = [51,50,54,53,55]
 Roof_in = [4,2,32,16,64]
 Roof_result = [0,0,0,0,0]
