@@ -74,9 +74,9 @@ class MyFirstGuiProgram(Ui_Form):
         #    image = QtGui.QImage(QtGui.QImageReader("red.png").read())
         #    self.label_1.setPixmap(QtGui.QPixmap(image))
 
-        Roof.check()
-        Roof_result = Roof.Roof_result
-        if Roof_result[0] == 1:
+        LR.check()
+        LR_result =LR.LR_result
+        if LR_result[4] == 1:
             image = QtGui.QImage(QtGui.QImageReader("green.png").read())
             self.label_1.setPixmap(QtGui.QPixmap(image))
         else:
