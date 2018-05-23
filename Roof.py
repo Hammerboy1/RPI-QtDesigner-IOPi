@@ -1,7 +1,7 @@
 #importing libraries
-#import smbus
-#import time
-#import IO
+import smbus
+import time
+import IO
 
 Roof_Write = [83,81,86,84,82]
 Roof_read = [51,50,54,53,55]
