@@ -80,11 +80,13 @@ class MyFirstGuiProgram(Ui_Form):
             
         for a in range(1,8):
                     if LR_result[0][a] == 1:
+                        xlabel = getattr(self, "label_"+str(a))            
                         image = QtGui.QImage(QtGui.QImageReader("green.png").read())
-                        self.label_1.setPixmap(QtGui.QPixmap(image))
+                        xlabel.setPixmap(QtGui.QPixmap(image))
                     else:
+                        xlabel = getattr(self, "label_"+str(a))
                         image = QtGui.QImage(QtGui.QImageReader("red.png").read())
-                        self.label_1.setPixmap(QtGui.QPixmap(image))
+                        xlabel.setPixmap(QtGui.QPixmap(image))
 
     def test_2(self):
         
