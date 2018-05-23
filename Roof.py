@@ -42,7 +42,7 @@ bus.write_byte_data(adress_25,0x0c,0x00)
 
 Roof_read = [83,81,86,84,82]
 Roof_write = [51,50,54,53,55]
-Roof_in = [4,2,32,16,64]
+Roof_in = [4,1,32,8,2]
 Roof_result = [0,0,0,0,0]
 
 #check if cable is OK
