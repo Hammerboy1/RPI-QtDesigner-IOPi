@@ -40,8 +40,8 @@ bus.write_byte_data(adress_24,0x0c,0x00)
 bus.write_byte_data(adress_25,0x0d,0x00)
 bus.write_byte_data(adress_25,0x0c,0x00)
 
-Roof_write = [83,81,86,84,82]
-Roof_read = [51,50,54,53,55]
+Roof_read = [83,81,86,84,82]
+Roof_write = [51,50,54,53,55]
 Roof_in = [4,2,32,16,64]
 Roof_result = [0,0,0,0,0]
 
