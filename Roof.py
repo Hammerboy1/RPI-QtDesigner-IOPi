@@ -64,7 +64,7 @@ def check():
                         Roof_result[out] = 1
                 if read != Roof_in[out]:
                         Roof_result[out] = 0
-                #print ("Roof_write-->", Roof_write[out], "Roof_read-->", Roof_read[out], "read-->", read, "result-->", Roof_result[out])
+                print ("Roof_write-->", Roof_write[out], "Roof_read-->", Roof_read[out], "read-->", read, "result-->", Roof_result[out])
                                 
                 out = out +1
 
