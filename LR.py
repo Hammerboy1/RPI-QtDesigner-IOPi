@@ -91,15 +91,15 @@ def check():
                         time.sleep(0.1)
                         bus.write_byte_data(adress_out,port_out,0)
 
-                        if out>=1 and out<=3:
-                                if read == 1 or read == 3 or read == 5 or read == 7:
-                                        LR_result[LR][1] = 1
-                                if read == 2 or read == 3 or read == 6 or read == 7:
-                                        LR_result[LR][2] = 1
-                                if read == 4 or read == 5 or read == 6 or read == 7:
-                                        LR_result[LR][3] = 1
+                        #if out>=1 and out<=3:
+                        #        if read == 1 or read == 3 or read == 5 or read == 7:
+                        #                LR_result[LR][1] = 1
+                        #        if read == 2 or read == 3 or read == 6 or read == 7:
+                        #                LR_result[LR][2] = 1
+                        #        if read == 4 or read == 5 or read == 6 or read == 7:
+                        #                LR_result[LR][3] = 1
                                    
-                        else:
+                        #else:
                                 if read == LR_in[LR][out]:
                                         LR_result[LR][out] = 1
                                 if read != LR_in[LR][out]:
@@ -110,4 +110,4 @@ def check():
                 LR = LR +1
                 
         return(LR_result)
-#check()
+check()
