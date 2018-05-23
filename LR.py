@@ -22,7 +22,7 @@ GPIOA  = 0x12
 GPIOB  = 0x13
 
 #setting pins as outputs
-bus.write_byte_data(adress_20,IO_DIR_A,0x03)
+bus.write_byte_data(adress_20,IO_DIR_A,0x05)
 bus.write_byte_data(adress_20,IO_DIR_B,0x00)
 bus.write_byte_data(adress_21,IO_DIR_A,0x00)
 bus.write_byte_data(adress_21,IO_DIR_B,0x00)
