@@ -69,4 +69,4 @@ def check():
                 out = out +1
 
         return(Roof_result)
-def check()
+check()
