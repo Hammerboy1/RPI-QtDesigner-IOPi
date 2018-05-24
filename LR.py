@@ -108,6 +108,14 @@ def check():
         for LR in range(0,1):
                 for out in range(1,8):
                         
+                        bus.write_byte_data(adress_20,IO_DIR_A,0x00)
+                        bus.write_byte_data(adress_20,IO_DIR_B,0x00)
+                        time.sleep(0.1)
+                        bus.write_byte_data(adress_20,IO_DIR_A,0xff)
+                        bus.write_byte_data(adress_20,IO_DIR_B,0xff)
+                        bus.write_byte_data(adress_20,0x0d,0x00)
+                        bus.write_byte_data(adress_20,0x0c,0x00)
+
                         #IO.set_output(LR_write[LR][out])
 
                         adress_in,port_in,pin_in = IO.read_pin(LR_read[LR][out])
