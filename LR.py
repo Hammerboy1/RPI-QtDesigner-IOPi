@@ -107,16 +107,12 @@ LR_result = [L1_result,L2_result,L3_result,R1_result,R2_result,R3_result]
 def check():
         for LR in range(0,1):
                 for out in range(1,8):
-                        
-                        bus.write_byte_data(adress_20,IO_DIR_A,0x00)
-                        bus.write_byte_data(adress_20,IO_DIR_B,0x00)
-                        bus.write_byte_data(adress_20,0x14,0)
-                        bus.write_byte_data(adress_20,0x15,0)
-                        time.sleep(0.1)
+                                            
                         bus.write_byte_data(adress_20,IO_DIR_A,0xff)
                         bus.write_byte_data(adress_20,IO_DIR_B,0xff)
                         bus.write_byte_data(adress_20,0x14,0)
                         bus.write_byte_data(adress_20,0x15,0)
+                        time.sleep(0.1)
                         bus.write_byte_data(adress_20,0x0d,0x00)
                         bus.write_byte_data(adress_20,0x0c,0x00)
 
