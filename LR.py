@@ -110,6 +110,8 @@ def check():
                         
                         bus.write_byte_data(adress_20,IO_DIR_A,0x00)
                         bus.write_byte_data(adress_20,IO_DIR_B,0x00)
+                        bus.write_byte_data(adress_20,0x14,0)
+                        bus.write_byte_data(adress_20,0x15,0)
                         time.sleep(0.1)
                         bus.write_byte_data(adress_20,IO_DIR_A,0xff)
                         bus.write_byte_data(adress_20,IO_DIR_B,0xff)
