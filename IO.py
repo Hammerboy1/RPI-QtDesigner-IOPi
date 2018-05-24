@@ -1,6 +1,5 @@
 #importing libraries
 import smbus
-import IO
 
 bus = smbus.SMBus(1)
 # Device address
@@ -22,6 +21,7 @@ GPIOB  = 0x13
 
 IO_write = None
 IO_read = None
+IO_output = None
 
 #function to acces outputpins
 def write_pin(IO_write):
