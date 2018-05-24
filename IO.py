@@ -65,14 +65,14 @@ def read_pin(IO_read):
 def set_output(IO_output):
 
         #setting pins as inputs
-        bus.write_byte_data(adress_20,IO_DIR_A,0x00)
-        bus.write_byte_data(adress_20,IO_DIR_B,0x00)
-        bus.write_byte_data(adress_21,IO_DIR_A,0x00)
-        bus.write_byte_data(adress_21,IO_DIR_B,0x00)
-        bus.write_byte_data(adress_22,IO_DIR_A,0x00)
-        bus.write_byte_data(adress_22,IO_DIR_B,0x00)
-        bus.write_byte_data(adress_23,IO_DIR_A,0x00)
-        bus.write_byte_data(adress_23,IO_DIR_B,0x00)
+        #bus.write_byte_data(adress_20,IO_DIR_A,0x00)
+        #bus.write_byte_data(adress_20,IO_DIR_B,0x00)
+        #bus.write_byte_data(adress_21,IO_DIR_A,0x00)
+        #bus.write_byte_data(adress_21,IO_DIR_B,0x00)
+        #bus.write_byte_data(adress_22,IO_DIR_A,0x00)
+        #bus.write_byte_data(adress_22,IO_DIR_B,0x00)
+        #bus.write_byte_data(adress_23,IO_DIR_A,0x00)
+        #bus.write_byte_data(adress_23,IO_DIR_B,0x00)
         #setting pins as pull-up inputs
         #bus.write_byte_data(adress_24,IO_DIR_A,0xff)
         #bus.write_byte_data(adress_24,IO_DIR_B,0xff)
