@@ -85,18 +85,18 @@ def set_output(IO_output):
         
         adress_array = [0x20, 0x21, 0x22, 0x23, 0x24, 0x25]
 
-        IO_dir_array = [0x00, 0x01]
+        dir_array = [0x00, 0x01]
 
         pin_array = [0xfe, 0xfd, 0xfb, 0xf7, 0xef, 0xdf, 0xbf, 0x7f]
 
 
         adress = adress_array[int((IO_output-1)/16)]
 
-        IO_dir = IO_dir_array[int(((IO_output-1)/8)%2)]
+        dir = dir_array[int(((IO_output-1)/8)%2)]
 
         pin = pin_array[7 & (IO_output - 1)]
 
-        bus.write_byte_data(adress,IO_dir,pin)
+        bus.write_byte_data(adress,dir,pin)
 
-        return(adress,IO_dir,pin)
+        return(adress,dir,pin)
 
