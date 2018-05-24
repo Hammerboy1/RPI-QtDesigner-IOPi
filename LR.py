@@ -108,7 +108,7 @@ def check():
         for LR in range(0,1):
                 for out in range(1,8):
                         
-                        IO.set_output(LR_write[LR][out])
+                        #IO.set_output(LR_write[LR][out])
 
                         adress_in,port_in,pin_in = IO.read_pin(LR_read[LR][out])
                         adress_out,port_out,pin_out = IO.write_pin(LR_write[LR][out])
