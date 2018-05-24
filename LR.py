@@ -31,14 +31,14 @@ GPIOB  = 0x13
 #bus.write_byte_data(adress_23,IO_DIR_A,0x00)
 #bus.write_byte_data(adress_23,IO_DIR_B,0x00)
 #setting pins as pull-up inputs
-#bus.write_byte_data(adress_24,IO_DIR_A,0xff)
-#bus.write_byte_data(adress_24,IO_DIR_B,0xff)
-#bus.write_byte_data(adress_25,IO_DIR_A,0xff)
-#bus.write_byte_data(adress_25,IO_DIR_B,0xff)
-#bus.write_byte_data(adress_24,0x0d,0x00)
-#bus.write_byte_data(adress_24,0x0c,0x00)
-#bus.write_byte_data(adress_25,0x0d,0x00)
-#bus.write_byte_data(adress_25,0x0c,0x00)
+bus.write_byte_data(adress_24,IO_DIR_A,0xff)
+bus.write_byte_data(adress_24,IO_DIR_B,0xff)
+bus.write_byte_data(adress_25,IO_DIR_A,0xff)
+bus.write_byte_data(adress_25,IO_DIR_B,0xff)
+bus.write_byte_data(adress_24,0x0d,0x00)
+bus.write_byte_data(adress_24,0x0c,0x00)
+bus.write_byte_data(adress_25,0x0d,0x00)
+bus.write_byte_data(adress_25,0x0c,0x00)
 
 #setting pins as outputs
 #bus.write_byte_data(adress_24,IO_DIR_A,0x00)
