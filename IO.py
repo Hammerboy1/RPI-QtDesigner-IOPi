@@ -92,7 +92,7 @@ def set_output(IO_output):
 
         adress = adress_array[int((IO_output-1)/16)]
 
-        direction = dir_array[int(((IO_output-1)/8)%2)]
+        direction = direction_array[int(((IO_output-1)/8)%2)]
 
         pin = pin_array[7 & (IO_output - 1)]
 
