@@ -115,6 +115,8 @@ def check():
                         time.sleep(0.1)
                         bus.write_byte_data(adress_20,IO_DIR_A,0xff)
                         bus.write_byte_data(adress_20,IO_DIR_B,0xff)
+                        bus.write_byte_data(adress_20,0x14,0)
+                        bus.write_byte_data(adress_20,0x15,0)
                         bus.write_byte_data(adress_20,0x0d,0x00)
                         bus.write_byte_data(adress_20,0x0c,0x00)
 
@@ -126,22 +128,6 @@ def check():
                         #bus.write_byte_data(adress_out,port_out,0)
                         #bus.write_byte_data(adress_in,port_in,0)
                         time.sleep(0.1)
-                        
-                        read = bus.read_byte_data(adress_in,port_in)
-                        if out>=1 and out<=3:
-                                if read == 1 or read == 3 or read == 5 or read == 7:
-                                        LR_result[LR][1] = 1
-                                if read == 2 or read == 3 or read == 6 or read == 7:
-                                        LR_result[LR][2] = 1
-                                if read == 4 or read == 5 or read == 6 or read == 7:
-                                        LR_result[LR][3] = 1
-                                   
-                        else:
-                                if read == LR_in[LR][out]:
-                                        LR_result[LR][out] = 1
-                                if read != LR_in[LR][out]:
-                                        LR_result[LR][out] = 0
-                        print ("LR_write-->", LR_write[LR][out], "LR_read-->", LR_read[LR][out], "read-->", read, "result-->", LR_result[LR][out])
                         
                         bus.write_byte_data(adress_out,port_out,pin_out)
                         #bus.write_byte_data(adress_in,port_in,0)
