@@ -106,7 +106,7 @@ LR_result = [L1_result,L2_result,L3_result,R1_result,R2_result,R3_result]
 #check if cable is OK
 def check():
         for LR in range(0,1):
-                for out in range(1,8):
+                for out in range(1,2):
                         
                         IO.set_output(LR_write[LR][out])
 
