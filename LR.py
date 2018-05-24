@@ -22,23 +22,23 @@ GPIOA  = 0x12
 GPIOB  = 0x13
 
 #setting pins as outputs
-bus.write_byte_data(adress_20,IO_DIR_A,0x00)
-bus.write_byte_data(adress_20,IO_DIR_B,0x00)
-bus.write_byte_data(adress_21,IO_DIR_A,0x00)
-bus.write_byte_data(adress_21,IO_DIR_B,0x00)
-bus.write_byte_data(adress_22,IO_DIR_A,0x00)
-bus.write_byte_data(adress_22,IO_DIR_B,0x00)
-bus.write_byte_data(adress_23,IO_DIR_A,0x00)
-bus.write_byte_data(adress_23,IO_DIR_B,0x00)
+#bus.write_byte_data(adress_20,IO_DIR_A,0x00)
+#bus.write_byte_data(adress_20,IO_DIR_B,0x00)
+#bus.write_byte_data(adress_21,IO_DIR_A,0x00)
+#bus.write_byte_data(adress_21,IO_DIR_B,0x00)
+#bus.write_byte_data(adress_22,IO_DIR_A,0x00)
+#bus.write_byte_data(adress_22,IO_DIR_B,0x00)
+#bus.write_byte_data(adress_23,IO_DIR_A,0x00)
+#bus.write_byte_data(adress_23,IO_DIR_B,0x00)
 #setting pins as pull-up inputs
-bus.write_byte_data(adress_24,IO_DIR_A,0xff)
-bus.write_byte_data(adress_24,IO_DIR_B,0xff)
-bus.write_byte_data(adress_25,IO_DIR_A,0xff)
-bus.write_byte_data(adress_25,IO_DIR_B,0xff)
-bus.write_byte_data(adress_24,0x0d,0x00)
-bus.write_byte_data(adress_24,0x0c,0x00)
-bus.write_byte_data(adress_25,0x0d,0x00)
-bus.write_byte_data(adress_25,0x0c,0x00)
+#bus.write_byte_data(adress_24,IO_DIR_A,0xff)
+#bus.write_byte_data(adress_24,IO_DIR_B,0xff)
+#bus.write_byte_data(adress_25,IO_DIR_A,0xff)
+#bus.write_byte_data(adress_25,IO_DIR_B,0xff)
+#bus.write_byte_data(adress_24,0x0d,0x00)
+#bus.write_byte_data(adress_24,0x0c,0x00)
+#bus.write_byte_data(adress_25,0x0d,0x00)
+#bus.write_byte_data(adress_25,0x0c,0x00)
 
 #setting pins as outputs
 #bus.write_byte_data(adress_24,IO_DIR_A,0x00)
@@ -107,6 +107,8 @@ LR_result = [L1_result,L2_result,L3_result,R1_result,R2_result,R3_result]
 def check():
         for LR in range(0,1):
                 for out in range(1,8):
+                        
+                        IO.set_output(LR_read[LR][out])
 
                         adress_in,port_in,pin_in = IO.read_pin(LR_read[LR][out])
                         adress_out,port_out,pin_out = IO.write_pin(LR_write[LR][out])
