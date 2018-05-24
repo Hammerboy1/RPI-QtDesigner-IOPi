@@ -115,7 +115,7 @@ def check():
 
                         bus.write_byte_data(adress_out,port_out,0)
                         bus.write_byte_data(adress_in,port_in,0)
-                        time.sleep(0.01)
+                        time.sleep(0.1)
                         
                         read = bus.read_byte_data(adress_in,port_in)
                         if out>=1 and out<=3:
@@ -135,9 +135,9 @@ def check():
                         
                         bus.write_byte_data(adress_out,port_out,pin_out)
                         #bus.write_byte_data(adress_in,port_in,0)
-                        time.sleep(0.01)
+                        time.sleep(0.1)
                         read = bus.read_byte_data(adress_in,port_in)
-                        time.sleep(0.01)
+                        time.sleep(0.1)
                         bus.write_byte_data(adress_out,port_out,0)
 
                         if out>=1 and out<=3:
