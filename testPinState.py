@@ -52,13 +52,12 @@ L1_in = [0,0,0,0,8,16,32,64]
 def check():
         for out in range(1,2):
                 while True:
-                        val = 127
                         adress_in,port_in,pin_in = IO.read_pin(1)                               
                                                                                      
                         time.sleep(1)
                         read = bus.read_byte_data(adress_in,port_in)
                         
-                        read = read and val
+                        read = 
                         
                         print ("L1_write-->", L1_write[out], "L1_read-->", L1_read[out], "read-->", read)                        
                 
