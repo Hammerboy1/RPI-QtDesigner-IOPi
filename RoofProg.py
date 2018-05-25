@@ -35,8 +35,8 @@ class MyFirstGuiProgram(Ui_Form):
         self.Background.setPixmap(QtGui.QPixmap(image))        
 
         self.Test1.clicked.connect(self.test_1)
-        self.Test2.clicked.connect(self.test_2)
-        self.Test3.clicked.connect(self.test_3)
+        #self.Test2.clicked.connect(self.test_2)
+        #self.Test3.clicked.connect(self.test_3)
         
     def test_1(self):
 
