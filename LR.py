@@ -135,10 +135,10 @@ def check():
                         if out==1: 
                                 if read == 1 or read == 3 or read == 5 or read == 7:
                                         LR_result[LR][1] = 1
-                        else if out==2:        
+                        elif out==2:        
                                 if read == 2 or read == 3 or read == 6 or read == 7:
                                         LR_result[LR][2] = 1
-                        else if out==3:             
+                        elif out==3:             
                                 if read == 4 or read == 5 or read == 6 or read == 7:
                                         LR_result[LR][3] = 1
                                    
