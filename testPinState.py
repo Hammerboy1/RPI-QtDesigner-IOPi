@@ -72,6 +72,7 @@ L1_write = [0,83,83,83,67,66,65,86]
 L1_read = [0,1,2,3,4,5,6,7]
 L1_in = [0,0,0,0,8,16,32,64]
 L1_result = [0,0,0,0,0,0,0,0]
+L1_result1 = [0,0,0,0,0,0,0,0]
 
 L2_read = [0,83,83,83,70,69,68,86]
 L2_write = [0,9,10,11,12,13,14,15]
@@ -102,6 +103,7 @@ LR_write = [L1_write,L2_write,L3_write,R1_write,R2_write,R3_write]
 LR_read = [L1_read,L2_read,L3_read,R1_read,R2_read,R3_read] 
 LR_in = [L1_in,L2_in,L3_in,R1_in,R2_in,R3_in]
 LR_result = [L1_result,L2_result,L3_result,R1_result,R2_result,R3_result]
+LR_result1 = [L1_result1,L2_result,L3_result,R1_result,R2_result,R3_result]
 
 #check if cable is OK
 def check():
@@ -140,13 +142,13 @@ def check():
                                                 LR_result[LR][1] = 1
                                         
                                         if read1 == 1 or read == 3 or read == 5 or read == 7:
-                                                LR_result[LR][1] = 1
+                                                LR_result1[LR][1] = 1
                                 elif out==2:        
                                         if read == 2 or read == 3 or read == 6 or read == 7:
-                                                LR_result[LR][2] = 1
+                                                LR_result1[LR][2] = 1
                                 elif out==3:             
                                         if read == 4 or read == 5 or read == 6 or read == 7:
-                                                LR_result[LR][3] = 1
+                                                LR_result1[LR][3] = 1
                                            
                                 else:
                                         if read == LR_in[LR][out]:
@@ -154,6 +156,8 @@ def check():
                                         if read != LR_in[LR][out]:
                                                 LR_result[LR][out] = 0
                                 print ("LR_write-->", LR_write[LR][out], "LR_read-->", LR_read[LR][out], "read-->", read, "result-->", LR_result[LR][out])
+                                print ("LR_write-->", LR_write[LR][out], "LR_read-->", LR_read[LR][out], "read-->", read1, "result-->", LR_result1[LR][out])
+                               
                                 LR_result[LR][out] = 0
                         #out = out + 1
                 #LR = LR +1
