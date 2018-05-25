@@ -119,7 +119,7 @@ def check():
                         time.sleep(0.1)
                         bus.write_byte_data(adress_out,port_out,0)
                         
-                        #read = ~read 
+                        read = ~read 
                         read = read & 0xff
 
                         if out==1: 
