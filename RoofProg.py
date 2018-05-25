@@ -52,21 +52,8 @@ class MyFirstGuiProgram(Ui_Form):
                         xlabel.setPixmap(QtGui.QPixmap(image))
 
     def test_2(self):
-        
-        for i in range(1,10):
-            
-           xlabel = getattr(self, "label_"+str(i))
-            
-           image = QtGui.QImage(QtGui.QImageReader("red.png").read())
-           xlabel.setPixmap(QtGui.QPixmap(image))
 
     def test_3(self):
-        for i in range(1,10):
-            
-           xlabel = getattr(self, "label_"+str(i))
-            
-           image = QtGui.QImage(QtGui.QImageReader("green.png").read())
-           xlabel.setPixmap(QtGui.QPixmap(image))
 
         
 if __name__ == '__main__':
