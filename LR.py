@@ -93,9 +93,9 @@ def check():
                         adress_out,port_out,pin_out = IO.write_pin(LR_write[LR][out])
                         
                         bus.write_byte_data(adress_out,port_out,pin_out)
-                        time.sleep(0.01)
+                        time.sleep(0.05)
                         read = bus.read_byte_data(adress_in,port_in)
-                        time.sleep(0.01)
+                        time.sleep(0.05)
                         bus.write_byte_data(adress_out,port_out,0)
                         
                         read = ~read 
