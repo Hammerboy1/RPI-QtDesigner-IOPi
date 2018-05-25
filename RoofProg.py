@@ -26,25 +26,6 @@ OLATB  = 0x15
 # Register for inputs
 GPIOA  = 0x12 
 GPIOB  = 0x13
-
-#setting pins as outputs
-#bus.write_byte_data(adress_20,IO_DIR_A,0x00)
-#bus.write_byte_data(adress_20,IO_DIR_B,0x00)
-#bus.write_byte_data(adress_21,IO_DIR_A,0x00)
-#bus.write_byte_data(adress_21,IO_DIR_B,0x00)
-#bus.write_byte_data(adress_22,IO_DIR_A,0x00)
-#bus.write_byte_data(adress_22,IO_DIR_B,0x00)
-#bus.write_byte_data(adress_23,IO_DIR_A,0x00)
-#bus.write_byte_data(adress_23,IO_DIR_B,0x00)
-#setting pins as pull-up inputs
-#bus.write_byte_data(adress_24,IO_DIR_A,0xff)
-#bus.write_byte_data(adress_24,IO_DIR_B,0xff)
-#bus.write_byte_data(adress_25,IO_DIR_A,0xff)
-#bus.write_byte_data(adress_25,IO_DIR_B,0xff)
-#bus.write_byte_data(adress_24,0x0d,0x00)
-#bus.write_byte_data(adress_24,0x0c,0x00)
-#bus.write_byte_data(adress_25,0x0d,0x00)
-#bus.write_byte_data(adress_25,0x0c,0x00)
             
 class MyFirstGuiProgram(Ui_Form):
     def __init__(self, dialog):
@@ -56,24 +37,6 @@ class MyFirstGuiProgram(Ui_Form):
         self.Test3.clicked.connect(self.test_3)
         
     def test_1(self):
-
-        #adress_in,port_in,pin_in = IO.read_pin(65)
-        #adress_out,port_out,pin_out = IO.write_pin(1)
-        #bus.write_byte_data(adress_out,port_out,0)
-        #bus.write_byte_data(adress_in,port_in,0)
-        #time.sleep(0.2)
-        #bus.write_byte_data(adress_out,port_out,pin_out)
-        #time.sleep(0.2)
-        #read = bus.read_byte_data(adress_in,port_in)
-        #time.sleep(0.2)
-        #bus.write_byte_data(adress_out,port_out,0)
-        
-        #if read == 1:
-        #    image = QtGui.QImage(QtGui.QImageReader("green.png").read())
-        #    self.label_1.setPixmap(QtGui.QPixmap(image))
-        #else:
-        #    image = QtGui.QImage(QtGui.QImageReader("red.png").read())
-        #    self.label_1.setPixmap(QtGui.QPixmap(image))
 
         LR.check()
         LR_result =LR.LR_result
