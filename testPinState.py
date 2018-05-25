@@ -159,6 +159,7 @@ def check():
                                 print ("LR_write-->", LR_write[LR][out], "LR_read-->", LR_read[LR][out], "read1-->", read1, "result1-->", LR_result1[LR][out])
                                
                                 LR_result[LR][out] = 0
+                                LR_result1[LR][out] = 0
                         #out = out + 1
                 #LR = LR +1
                 
