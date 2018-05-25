@@ -45,7 +45,7 @@ bus.write_byte_data(adress_23,0x0d,0xff)
 bus.write_byte_data(adress_23,0x0c,0xff)
 
 L1_write = [0,83,83,83,67,66,65,86]
-L1_read = [0,1,2,3,4,5,6,7]
+L1_read = [0,0,0,0,4,5,6,7]
 L1_in = [0,0,0,0,8,16,32,64]
 L1_result = [0,0,0,0,0,0,0,0]
 
@@ -93,9 +93,9 @@ def check():
                         adress_out,port_out,pin_out = IO.write_pin(LR_write[LR][out])
                         
                         bus.write_byte_data(adress_out,port_out,pin_out)
-                        time.sleep(0.1)
+                        time.sleep(0.01)
                         read = bus.read_byte_data(adress_in,port_in)
-                        time.sleep(0.1)
+                        time.sleep(0.01)
                         bus.write_byte_data(adress_out,port_out,0)
                         
                         read = ~read 
