@@ -31,7 +31,9 @@ class MyFirstGuiProgram(Ui_Form):
     def __init__(self, dialog):
         Ui_Form.__init__(self)
         self.setupUi(dialog)
-    
+        image = QtGui.QImage(QtGui.QImageReader("background.png").read())
+        self.Background.setPixmap(QtGui.QPixmap(image))        
+
         self.Test1.clicked.connect(self.test_1)
         self.Test2.clicked.connect(self.test_2)
         self.Test3.clicked.connect(self.test_3)
