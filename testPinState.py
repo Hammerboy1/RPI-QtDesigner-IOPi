@@ -56,6 +56,8 @@ def check():
                                                                                      
                         time.sleep(1)
                         read = bus.read_byte_data(adress_in,port_in)
+                        #read = read & 0x80
+                        read = ~read 
                         
                         print ("L1_write-->", L1_write[out], "L1_read-->", L1_read[out], "read-->", read)                        
                 
