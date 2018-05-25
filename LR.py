@@ -70,7 +70,7 @@ bus.write_byte_data(adress_23,0x0c,0xff)
 
 L1_write = [0,83,83,83,67,66,65,86]
 L1_read = [0,1,2,3,4,5,6,7]
-L1_in = [0,1,2,4,8,16,32,64]
+L1_in = [0,0,0,0,8,16,32,64]
 L1_result = [0,0,0,0,0,0,0,0]
 
 L2_read = [0,83,83,83,70,69,68,86]
@@ -126,22 +126,22 @@ def check():
                         read = ~read 
                         read = read & 0xff
 
-                        #if out==1: 
-                        #        if read == 1 or read == 3 or read == 5 or read == 7:
-                        #                LR_result[LR][1] = 1
-                        #elif out==2:        
-                        #        if read == 2 or read == 3 or read == 6 or read == 7:
-                        #                LR_result[LR][2] = 1
-                        #elif out==3:             
-                        #        if read == 4 or read == 5 or read == 6 or read == 7:
-                        #                LR_result[LR][3] = 1
+                        if out==1: 
+                                if read == 1 or read == 3 or read == 5 or read == 7:
+                                        LR_result[LR][1] = 1
+                        elif out==2:        
+                                if read == 2 or read == 3 or read == 6 or read == 7:
+                                        LR_result[LR][2] = 1
+                        elif out==3:             
+                                if read == 4 or read == 5 or read == 6 or read == 7:
+                                        LR_result[LR][3] = 1
                                    
-                        #else:
-                        if read == LR_in[LR][out]:
-                                LR_result[LR][out] = 1
-                        if read != LR_in[LR][out]:
-                                LR_result[LR][out] = 0
-                        print ("LR_write-->", LR_write[LR][out], "LR_read-->", LR_read[LR][out], "read-->", read, "result-->", LR_result[LR][out])
+                        else:
+                                if read == LR_in[LR][out]:
+                                        LR_result[LR][out] = 1
+                                if read != LR_in[LR][out]:
+                                        LR_result[LR][out] = 0
+                                print ("LR_write-->", LR_write[LR][out], "LR_read-->", LR_read[LR][out], "read-->", read, "result-->", LR_result[LR][out])
 
                         out = out + 1
                 LR = LR +1
