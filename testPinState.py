@@ -129,20 +129,20 @@ def check():
                                 
                                 bus.write_byte_data(adress_out,port_out,pin_out)
                                 #bus.write_byte_data(adress_in,port_in,0)
-                                time.sleep(2)
+                                time.sleep(4)
                                 read = bus.read_byte_data(adress_in,port_in)
                                 time.sleep(0.1)
-                                bus.write_byte_data(adress_out,port_out,0)
-                                time.sleep(2)
-                                read1 = bus.read_byte_data(adress_in,port_in)
-                                time.sleep(0.1)
+                                #bus.write_byte_data(adress_out,port_out,0)
+                                #time.sleep(3)
+                                #read1 = bus.read_byte_data(adress_in,port_in)
+                                #time.sleep(0.1)
                                 
                                 if out==1: 
                                         if read == 1 or read == 3 or read == 5 or read == 7:
                                                 LR_result[LR][1] = 1
                                         
-                                        if read1 == 1 or read == 3 or read == 5 or read == 7:
-                                                LR_result1[LR][1] = 1
+                                        #if read1 == 1 or read == 3 or read == 5 or read == 7:
+                                        #        LR_result1[LR][1] = 1
                                 elif out==2:        
                                         if read == 2 or read == 3 or read == 6 or read == 7:
                                                 LR_result1[LR][2] = 1
@@ -156,7 +156,7 @@ def check():
                                         if read != LR_in[LR][out]:
                                                 LR_result[LR][out] = 0
                                 print ("LR_write-->", LR_write[LR][out], "LR_read-->", LR_read[LR][out], "read-->", read, "result-->", LR_result[LR][out])
-                                print ("LR_write-->", LR_write[LR][out], "LR_read-->", LR_read[LR][out], "read1-->", read1, "result1-->", LR_result1[LR][out])
+                                #print ("LR_write-->", LR_write[LR][out], "LR_read-->", LR_read[LR][out], "read1-->", read1, "result1-->", LR_result1[LR][out])
                                
                                 LR_result[LR][out] = 0
                                 LR_result1[LR][out] = 0
