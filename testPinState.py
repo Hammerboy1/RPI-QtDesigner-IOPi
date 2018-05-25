@@ -129,9 +129,10 @@ def check():
                                 #bus.write_byte_data(adress_in,port_in,0)
                                 time.sleep(2)
                                 read = bus.read_byte_data(adress_in,port_in)
-                                time.sleep(2)
+                                time.sleep(0.1)
                                 bus.write_byte_data(adress_out,port_out,0)
-
+                                time.sleep(2)
+                                
                                 if out==1: 
                                         if read == 1 or read == 3 or read == 5 or read == 7:
                                                 LR_result[LR][1] = 1
