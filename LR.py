@@ -54,14 +54,14 @@ bus.write_byte_data(adress_22,IO_DIR_A,0xff)
 bus.write_byte_data(adress_22,IO_DIR_B,0xff)
 bus.write_byte_data(adress_23,IO_DIR_A,0xff)
 bus.write_byte_data(adress_23,IO_DIR_B,0xff)
-bus.write_byte_data(adress_20,0x0d,0x00)
-bus.write_byte_data(adress_20,0x0c,0x00)
-bus.write_byte_data(adress_21,0x0d,0x00)
-bus.write_byte_data(adress_21,0x0c,0x00)
-bus.write_byte_data(adress_22,0x0d,0x00)
-bus.write_byte_data(adress_22,0x0c,0x00)
-bus.write_byte_data(adress_23,0x0d,0x00)
-bus.write_byte_data(adress_23,0x0c,0x00)
+bus.write_byte_data(adress_20,0x0d,0xff)
+bus.write_byte_data(adress_20,0x0c,0xff)
+bus.write_byte_data(adress_21,0x0d,0xff)
+bus.write_byte_data(adress_21,0x0c,0xff)
+bus.write_byte_data(adress_22,0x0d,0xff)
+bus.write_byte_data(adress_22,0x0c,0xff)
+bus.write_byte_data(adress_23,0x0d,0xff)
+bus.write_byte_data(adress_23,0x0c,0xff)
 
 #L1_read = [0,83,83,83,67,66,65,86]
 #L1_write = [0,1,2,3,4,5,6,7]
@@ -107,30 +107,20 @@ LR_result = [L1_result,L2_result,L3_result,R1_result,R2_result,R3_result]
 def check():
         for LR in range(0,1):
                 for out in range(1,8):
-                                            
-                        bus.write_byte_data(adress_20,IO_DIR_A,0xff)
-                        bus.write_byte_data(adress_20,IO_DIR_B,0xff)
-                        bus.write_byte_data(adress_20,0x14,0)
-                        bus.write_byte_data(adress_20,0x15,0)
-                        time.sleep(0.1)
-                        bus.write_byte_data(adress_20,0x0d,0x00)
-                        bus.write_byte_data(adress_20,0x0c,0x00)
 
                         #IO.set_output(LR_write[LR][out])
 
                         adress_in,port_in,pin_in = IO.read_pin(LR_read[LR][out])
                         adress_out,port_out,pin_out = IO.write_pin(LR_write[LR][out])
-
-                        #bus.write_byte_data(adress_out,port_out,0)
-                        #bus.write_byte_data(adress_in,port_in,0)
-                        time.sleep(0.1)
                         
                         bus.write_byte_data(adress_out,port_out,pin_out)
-                        #bus.write_byte_data(adress_in,port_in,0)
                         time.sleep(0.1)
                         read = bus.read_byte_data(adress_in,port_in)
                         time.sleep(0.1)
                         bus.write_byte_data(adress_out,port_out,0)
+                        
+                        #read = ~read 
+                        read = read & 0xff
 
                         if out==1: 
                                 if read == 1 or read == 3 or read == 5 or read == 7:
