@@ -22,25 +22,6 @@ GPIOA  = 0x12
 GPIOB  = 0x13
 
 #setting pins as outputs
-#bus.write_byte_data(adress_20,IO_DIR_A,0x00)
-#bus.write_byte_data(adress_20,IO_DIR_B,0x00)
-#bus.write_byte_data(adress_21,IO_DIR_A,0x00)
-#bus.write_byte_data(adress_21,IO_DIR_B,0x00)
-#bus.write_byte_data(adress_22,IO_DIR_A,0x00)
-#bus.write_byte_data(adress_22,IO_DIR_B,0x00)
-#bus.write_byte_data(adress_23,IO_DIR_A,0x00)
-#bus.write_byte_data(adress_23,IO_DIR_B,0x00)
-#setting pins as pull-up inputs
-#bus.write_byte_data(adress_24,IO_DIR_A,0xff)
-#bus.write_byte_data(adress_24,IO_DIR_B,0xff)
-#bus.write_byte_data(adress_25,IO_DIR_A,0xff)
-#bus.write_byte_data(adress_25,IO_DIR_B,0xff)
-#bus.write_byte_data(adress_24,0x0d,0x00)
-#bus.write_byte_data(adress_24,0x0c,0x00)
-#bus.write_byte_data(adress_25,0x0d,0x00)
-#bus.write_byte_data(adress_25,0x0c,0x00)
-
-#setting pins as outputs
 bus.write_byte_data(adress_24,IO_DIR_A,0x00)
 bus.write_byte_data(adress_24,IO_DIR_B,0x00)
 bus.write_byte_data(adress_25,IO_DIR_A,0x00)
@@ -62,11 +43,6 @@ bus.write_byte_data(adress_22,0x0d,0xff)
 bus.write_byte_data(adress_22,0x0c,0xff)
 bus.write_byte_data(adress_23,0x0d,0xff)
 bus.write_byte_data(adress_23,0x0c,0xff)
-
-#L1_read = [0,83,83,83,67,66,65,86]
-#L1_write = [0,1,2,3,4,5,6,7]
-#L1_in = [0,4,4,4,4,2,1,32]
-#L1_result = [0,0,0,0,0,0,0,0]
 
 L1_write = [0,83,83,83,67,66,65,86]
 L1_read = [0,1,2,3,4,5,6,7]
@@ -112,7 +88,6 @@ def check():
                         bus.write_byte_data(adress_24,OLATB,0xff)
                         bus.write_byte_data(adress_25,OLATA,0xff)
                         bus.write_byte_data(adress_25,OLATB,0xff)
-                        #IO.set_output(LR_write[LR][out])
 
                         adress_in,port_in,pin_in = IO.read_pin(LR_read[LR][out])
                         adress_out,port_out,pin_out = IO.write_pin(LR_write[LR][out])
@@ -147,4 +122,4 @@ def check():
                 LR = LR +1
                 
         return(LR_result)
-check()
+#check()
