@@ -53,9 +53,9 @@ class MyFirstGuiProgram(Ui_Form):
                         image = QtGui.QImage(QtGui.QImageReader("red.png").read())
                         xlabel.setPixmap(QtGui.QPixmap(image))
 
-    def test_2(self):
+    #def test_2(self):
 
-    def test_3(self):
+    #def test_3(self):
 
         
 if __name__ == '__main__':
