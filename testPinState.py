@@ -123,7 +123,7 @@ def check():
                                 adress_in,port_in,pin_in = IO.read_pin(LR_read[LR][out])
                                 adress_out,port_out,pin_out = IO.write_pin(LR_write[LR][out])
 
-                                #bus.write_byte_data(adress_out,port_out,0)
+                                bus.write_byte_data(adress_out,port_out,0)
                                 #bus.write_byte_data(adress_in,port_in,0)
                                 time.sleep(0.1)
                                 
@@ -156,7 +156,7 @@ def check():
                                         if read != LR_in[LR][out]:
                                                 LR_result[LR][out] = 0
                                 print ("LR_write-->", LR_write[LR][out], "LR_read-->", LR_read[LR][out], "read-->", read, "result-->", LR_result[LR][out])
-                                print ("LR_write-->", LR_write[LR][out], "LR_read-->", LR_read[LR][out], "read-->", read1, "result-->", LR_result1[LR][out])
+                                print ("LR_write-->", LR_write[LR][out], "LR_read-->", LR_read[LR][out], "read1-->", read1, "result1-->", LR_result1[LR][out])
                                
                                 LR_result[LR][out] = 0
                         #out = out + 1
